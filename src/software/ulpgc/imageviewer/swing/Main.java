@@ -2,7 +2,9 @@ package software.ulpgc.imageviewer.swing;
 
 import software.ulpgc.imageviewer.Image;
 import software.ulpgc.imageviewer.ImagePresenter;
-import software.ulpgc.imageviewer.mocks.MockImageLoader;
+import software.ulpgc.imageviewer.persistence.FolderImageLoader;
+
+import java.io.File;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +15,6 @@ public class Main {
     }
 
     private static Image image() {
-        return new MockImageLoader().load();
+        return new FolderImageLoader(new File("src/software/ulpgc/images")).load();
     }
 }
